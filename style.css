@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.background {
+    background: rgb(4, 5, 26);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.background h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: inherit;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    border: 1.7px solid #313e8b;
+}
+
+
+
+/* NUMEROS */
+
+.sec1{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5vmin 5vmin 0 5vmin;
+}
+
+.sec1 .btns{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 25vmin;
+}
+
+.sec1 .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0.3vmin;
+    height: 5vmin;
+    border: 2.2px #313e8b solid;
+    color: #ff8952;
+    text-align: center;
+}
+
+.sec1 .igual{
+    display: grid;
+    grid-column: 3 / 5;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0.3vmin;
+    height: 5vmin;
+    border: 2.2px #313e8b solid;
+    color: #ff8952;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sec1 .C{
+    display: grid;
+    grid-column: 1 / 3;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0.3vmin;
+    height: 5vmin;
+    border: 2.2px #313e8b solid;
+    color: #ff8952;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sec1 .numbers{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.sec1 .btns #btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0.3vmin;
+    height: 5vmin;
+    border: 2.2px #313e8b solid;
+    color: #ff8952;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp();
+}
+
+.sec1 #btn:hover{
+    background-color: #ff895226;
+    cursor: pointer;
+} 
+
+/* NUMEROS */
+
+
+
+
+
+/* HISTORIAL */
+
+.sec1 .history{
+    width: 30vmin;
+    height: 36vmin;
+    border: 2.3px #313e8b solid;
+}
+
+/* HISTORIAL */
+
+
+
+
+
+
+
+
+.sec2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5vmin;
+}
+
+.sec2_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 1vmin;
+    text-align: center;
+    width: 18vmin;
+    height: 13vmin;
+    border: 2.5px #313e8b solid;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 600px){
+
+    .sec1{
+        flex-direction: column;
+    }
+}
+
