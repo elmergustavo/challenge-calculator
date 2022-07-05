@@ -49,7 +49,7 @@ html{
     margin: 5vmin 5vmin 0 5vmin;
 }
 
-.sec1 .btns{
+.sec1 .btns .btn-container, .sec1 .btns .operation-container{
     display: grid;
     grid-template-columns: auto auto auto auto;
     width: 25vmin;
@@ -102,7 +102,7 @@ html{
     width: auto;
 }
 
-.sec1 .btns #btn{
+.sec1 .btns .btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +116,7 @@ html{
     font-size: clamp();
 }
 
-.sec1 #btn:hover{
+.sec1 .btn:hover, .sec2_text:hover{
     background-color: #ff895226;
     cursor: pointer;
 } 
@@ -133,8 +133,27 @@ html{
     width: 30vmin;
     height: 36vmin;
     border: 2.3px #313e8b solid;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
+.sec1 .rtl{
+    align-items: flex-start;
+}
+
+.history h5 {
+    color: #ff8952;
+}
+
+.history h1 {
+    color: #fff;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
 /* HISTORIAL */
 
 
