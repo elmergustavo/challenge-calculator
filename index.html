@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Calculadora-Eduardo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,12 +13,11 @@
         <h1>Calculator</h1>
         <div class="calculator">
 
-            <div class="container">
+            <!-- <div class="container"> -->
 
                 <div class="sec1">
                     <div class="numbers">
                         <div class="box">
-                            ???????
                         </div>
                         <div class="btns">
                             <div data-number="1" id="btn">1</div>
@@ -37,7 +36,9 @@
                             <div data-number="(" id="btn">(</div>
                             <div data-number=")" id="btn">)</div>
                             <div data-number="/" id="btn">/</div>
-                            <div class="C">C</div>
+                        </div>
+                        <div class="operators">
+                            <div class="delete">C</div>
                             <div class="igual">=</div>
                         </div>
                     </div>
@@ -46,12 +47,12 @@
                 </div>
 
                 <div class="sec2">
-                    <div class="sec2_text">Change Position</div>
-                    <div class="sec2_text">Random NumPad</div>
-                    <div class="sec2_text">RTL <br> history</div>
+                    <div class="sec2_text" id="switch_pos" >Change Position</div>
+                    <div class="sec2_text" id="random_num" >Random <br>NumPad</div>
+                    <div class="sec2_text" id="switch_pos_history" >RTL <br> history</div>
                 </div>
 
-            </div>
+            <!-- </div> -->
 
         </div>
     </div>
