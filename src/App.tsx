@@ -1,45 +1,147 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import GlobalStyle1 from "./Styles/theme1";
+import GlobalStyle2 from "./Styles/theme2";
+import GlobalStyle3 from "./Styles/theme3";
+import {
+  Container,
+  Header,
+  Input,
+  ButtonContainer,
+  Button,
+  WrapperSwitch,
+  Switch,
+  Switcher,
+  SwitcherContainer,
+} from "./App.style";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [value, setValue] = useState("");
+  const [theme, setTheme] = useState(1);
+  const [themeValue, setThemeValue] = useState("8%");
+
+  const calc = () => {
+    if (value.length >= 5 && value.slice(-1) !== " ") {
+      setValue(eval(value).toString());
+    }
+  };
+
+  const addSimbol = (simbol: string) => {
+    if (value.slice(-1) !== " " && value.slice(-1) !== ".") {
+      setValue(value + simbol);
+    }
+  };
+
+  const addZero = () => {
+    if (value.slice(-1) === " " || value.length === 0) {
+      setValue(value + "0.");
+    } else {
+      setValue(value + "0");
+    }
+  };
+
+  const deleteValue = () => {
+    if (value.slice(-1) === " ") {
+      setValue(value.substring(0, value.length - 3));
+    } else if (value.slice(-2) === "0.") {
+      setValue(value.substring(0, value.length - 2));
+    } else {
+      setValue(value.substring(0, value.length - 1));
+    }
+  };
+
+  const handleTheme = () => {
+    if (theme === 1) {
+      setTheme(2);
+      setThemeValue("38%");
+    } else if (theme === 2) {
+      setTheme(3);
+      setThemeValue("70%");
+    } else {
+      setTheme(1);
+      setThemeValue("8%");
+    }
+  };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      {theme === 1 && <GlobalStyle1 />}
+      {theme === 2 && <GlobalStyle2 />}
+      {theme === 3 && <GlobalStyle3 />}
+      <Container>
+        <Header>
+          Calc
+          <WrapperSwitch>
+            theme
+            <Switch>
+              <div>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+              </div>
+              <SwitcherContainer onClick={handleTheme}>
+                <Switcher theme={themeValue} />
+              </SwitcherContainer>
+            </Switch>
+          </WrapperSwitch>
+        </Header>
+        <Input>{value}</Input>
+        <ButtonContainer>
+          <Button onClick={() => setValue(value + "7")}>7</Button>
+          <Button onClick={() => setValue(value + "8")}>8</Button>
+          <Button onClick={() => setValue(value + "9")}>9</Button>
+          <Button
+            onClick={() => value.length >= 1 && deleteValue()}
+            color="var(--white)"
+            bg="var(--key-background-dark-blue)"
+            bdbox="var(--key-shadow-dark-blue)"
           >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
+            DEL
+          </Button>
+          <Button onClick={() => setValue(value + "4")}>4</Button>
+          <Button onClick={() => setValue(value + "5")}>5</Button>
+          <Button onClick={() => setValue(value + "6")}>6</Button>
+          <Button onClick={() => value.length >= 1 && addSimbol(" + ")}>
+            +
+          </Button>
+          <Button onClick={() => setValue(value + "1")}>1</Button>
+          <Button onClick={() => setValue(value + "2")}>2</Button>
+          <Button onClick={() => setValue(value + "3")}>3</Button>
+          <Button onClick={() => value.length >= 1 && addSimbol(" - ")}>
+            -
+          </Button>
+          <Button onClick={() => value.length >= 1 && addSimbol(".")}>.</Button>
+          <Button onClick={() => addZero()}>0</Button>
+          <Button onClick={() => value.length >= 1 && addSimbol(" / ")}>
+            /
+          </Button>
+          <Button onClick={() => value.length >= 1 && addSimbol(" * ")}>
+            x
+          </Button>
+          <Button
+            gc="1/3"
+            color="var(--white)"
+            bg="var(--key-background-dark-blue)"
+            bdbox="var(--key-shadow-dark-blue)"
+            onClick={() => setValue("")}
           >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
-}
+            RESET
+          </Button>
+          <Button
+            gc="3/5"
+            color={theme === 3 ? "black" : "var(--white)"}
+            bg="var(--key-background-red)"
+            bdbox="var(--key-shadow-dark-red)"
+            onClick={calc}
+          >
+            =
+          </Button>
+        </ButtonContainer>
+        <section>
+          <h2>History</h2>
+        </section>
+      </Container>
+    </>
+  );
+};
 
-export default App
+export default App;
