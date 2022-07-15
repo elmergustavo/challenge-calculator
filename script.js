@@ -9,6 +9,7 @@ const result = document.querySelector('.igual')
 const btnContainer = document.querySelector('.btn-container')
 const historyContainer = document.querySelector('.history')
 const rtlButton = document.querySelector('#rtl_button')
+const numbersBox = document.querySelector('.numbers')
 let input = ''
 const defaultElements = buttons
 const shuffleElements = []
@@ -32,7 +33,21 @@ numeros.forEach(element => {
 })
 
 changePosition.addEventListener('click', () => {
-    section1.classList.toggle('reverse')
+    if(!numbersBox.classList.contains('reverse-calculator')){
+        numbersBox.classList.remove('normal-calculator')
+        numbersBox.classList.add('reverse-calculator')
+    }else{
+        numbersBox.classList.add('normal-calculator')
+        numbersBox.classList.remove('reverse-calculator')
+    }
+
+    if(!historyContainer.classList.contains('reverse-history')){
+        historyContainer.classList.remove('normal-history')
+        historyContainer.classList.add('reverse-history')
+    }else{
+        historyContainer.classList.add('normal-history')
+        historyContainer.classList.remove('reverse-history')
+    }
 })
 
 result.addEventListener('click', e => {
