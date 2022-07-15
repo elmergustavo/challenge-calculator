@@ -1,0 +1,288 @@
+/* |---- Font ----| */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* |---- THEME 1 ----| */
+
+  /* |---- Variables Backgrounds ----| */
+  --very-desaturated-blue: rgb(58, 71, 100); /* (MAIN BACKGROUND) */
+  --very-desaturated-blue-key: rgb(35, 44, 67); /* (KEYPAD BACKGROUND) */
+  --very-desaturated-blue-screen: rgb(24, 32, 52); /* (SCREEN BACKGROUND) */
+
+  /* |---- Variabeles Keys ----| */
+  --desaturated-blue: rgb(99, 112, 151); /* (KEY BACKGROUND) */
+  --desaturated-dark-blue: rgb(64, 78, 114); /* (KEY SHADOW) */
+
+  --Red: rgb(208, 63, 47); /* (KEY BACKGROUND, TOGGLE) */
+  --Dark-red: rgb(147, 38, 26); /* (KEY BACKGROUND, KEY SHADOW) */
+
+  --Light-grayish-orange: rgb(234, 227, 220); /* (KEY BACKGROUND)*/
+  --Grayish-orange: rgb(180, 165, 151); /* (KEY SHADOW) */
+
+  /* |---- Variables para texto ----| */
+  --Very-dark-grayish-blue: rgb(68, 75, 90);
+  --light-color: rgb(255, 255, 255);
+
+  /* |-----------------------------------------------------------------------------| */
+
+  /* |---- THEME 2 ----| */
+  --light-gray: rgb(230, 230, 230); /* (Main Background)*/
+  --grayish-red: rgb(209, 204, 204); /* (Toggle Background and Keypad) */
+  --very-light-grey: rgb(237, 237, 237); /* (Screen Bacground) */
+
+  /* |---- THEME 2 KEYS ----| */
+  --dark-moderated-cyan: rgb(55, 127, 134); /* (Key Background) */
+  --very-dark-cyan: rgb(27, 95, 101); /* (Key shadow) */
+
+  --orange: rgb(202, 85, 2); /* (Key Background, toggle) */
+  --dark-orange: rgb(137, 57, 1); /* (Key Shadow) */
+
+  --Light-grayish-yellow: rgb(229, 228, 225); /* (Key Background) */
+  --Dark-grayish-orange: rgb(166, 157, 145); /* (Key Shadow) */
+
+  /* |---- THEME 2 TEXT ----| */
+  --Very-dark-grayish-yellow: rgb(53, 53, 44);
+  --White: rgb(255, 255, 255); /* (Text) */
+
+  /* |------------------------------------------------------------------------------| */
+
+  /* |---- THEME 3 ----| */
+  --Very-dark-violet: rgb(22, 6, 40); /* (Main Background) */
+  --Very-dark-violet2: rgb(
+    29,
+    9,
+    52
+  ); /* (Toggle Background, Keypad Background, Screen Background) */
+
+  /* |---- THEME 3 KEYS ----| */
+  --Dark-violet: rgb(88, 7, 125); /*  (Key Background) */
+  --Vivid-magenta: rgb(188, 21, 244); /* (Key Shadow) */
+
+  --Pure-cyan: rgb(0, 224, 209); /* (key background, toggle) */
+  --Soft-cyan: rgb(108, 249, 242); /* (key shadow) */
+
+  --Very-dark-violet: rgb(52, 28, 79); /* (key background) */
+  --Dark-magenta: rgb(135, 28, 156); /* (key shadow) */
+
+  /* |---- THEME 3 TEXT ----| */
+  --Light-yellow: rgb(255, 229, 61);
+  --Very-dark-blue: rgb(27, 36, 40);
+  --White: rgb(255, 255, 255); /* (text) */
+
+  /* |------------------------------------------------------------------------------| */
+
+  /* |---- Font ----| */
+  --general: "Spartan", sans-serif; /* (700) */
+}
+
+.background {
+  background: hsl(222, 26%, 31%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.background h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+
+.container {
+  background: rgb(28, 41, 68);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: inherit;
+  border-radius: 10px;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+
+/* NUMEROS */
+
+.sec1 {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5vmin 5vmin 0 5vmin;
+}
+
+.sec1 .btns .btn-container,
+.sec1 .btns .operation-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 25vmin;
+}
+
+.sec1 .box {
+  background-color: #e6e6e6;
+  color: var(--Very-dark-grayish-blue);
+  font-family: var(--general);
+  font-weight: 700;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0.3vmin;
+  height: 5vmin;
+  text-align: center;
+}
+
+.sec1 .igual {
+  display: grid;
+  grid-column: 3 / 5;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0.3vmin;
+  height: 5vmin;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--Red);
+  font-family: var(--general);
+  font-weight: 700;
+  color: var(--light-color);
+  border-radius: 7px;
+  box-shadow: 0px 4px 0px var(--Grayish-orange);
+}
+
+.sec1 .C {
+  display: grid;
+  grid-column: 1 / 3;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0.3vmin;
+  height: 5vmin;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--very-desaturated-blue);
+  font-family: var(--general);
+  font-weight: 700;
+  color: var(--light-color);
+  border-radius: 7px;
+  box-shadow: 0px 4px 0px var(--Grayish-orange);
+}
+
+.sec1 .numbers {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.sec1 .btns .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0.3vmin;
+  height: 5vmin;
+  border-radius: 7px;
+  color: var(--Very-dark-grayish-blue);
+  text-align: center;
+  font-size: clamp();
+  background-color: var(--Light-grayish-orange);
+  font-family: var(--general);
+  font-weight: 700;
+  box-shadow: 0px 4px 0px var(--Grayish-orange);
+}
+
+.sec1 .btn:hover,
+.sec2_text:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.operation-container .C:hover {
+    background-color: #18174e;
+    cursor: pointer;
+  }
+
+.operation-container .igual:hover {
+    background-color: #863d3d;
+    cursor: pointer;
+  }
+
+/* NUMEROS */
+
+/* HISTORIAL */
+
+.sec1 .history {
+  width: 30vmin;
+  height: 36vmin;
+  box-shadow: 0px 4px 0px var(--Grayish-orange);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: var(--Light-grayish-orange);
+  font-family: var(--general);
+  font-weight: 700;
+
+  border-radius: 7px;
+}
+
+.sec1 .rtl {
+  align-items: flex-start;
+}
+
+.history h5 {
+  color: #ff8952;
+}
+
+.history h1 {
+  color: var(--Very-dark-grayish-blue);
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+/* HISTORIAL */
+
+.sec2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5vmin;
+}
+
+.sec2_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 1vmin;
+  text-align: center;
+  width: 18vmin;
+  height: 8vmin;
+  background-color: var(--Light-grayish-orange);
+  font-family: var(--general);
+  font-weight: 700;
+  color: var(--Very-dark-grayish-blue);
+  border-radius: 7px;
+  box-shadow: 0px 4px 0px var(--Grayish-orange);
+}
+
+@media screen and (max-width: 600px) {
+  .sec1 {
+    flex-direction: column;
+  }
+}
