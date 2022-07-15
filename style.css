@@ -11,6 +11,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.operators, .sec2_text, .btn, .box{
+  font-size: clamp(12px, calc(0.1rem + 1vw), 44px);
+}
+
+h5{
+  font-size: clamp(1px, calc(0.55rem + 1vw), 24px);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+  color: white;
+  font-size: clamp(1px, calc(0.55rem + 1vw), 17px);
+  padding: 0 0 1vw 0;
+}
+
 :root {
   /* |---- THEME 1 ----| */
 
@@ -99,20 +114,22 @@ html {
   color: white;
 }
 
-.container {
+/* .container {
   background: rgb(28, 41, 68);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   height: inherit;
   border-radius: 10px;
-}
+} */
 
 .calculator {
   display: flex;
   flex-direction: column;
+  background: rgb(28, 41, 68);
   width: auto;
   height: auto;
+  border-radius: 10px;
 }
 
 /* NUMEROS */
@@ -125,6 +142,18 @@ html {
   align-items: center;
   margin: 5vmin 5vmin 0 5vmin;
 }
+
+.sec1 .history::-webkit-scrollbar{
+  width: 10px;
+  background-color: var(--Dark-grayish-orange);
+}
+
+.sec1 .history::-webkit-scrollbar-thumb{
+  background-color: var(--orange);
+  border: 2px solid --Dark-grayish-orange;
+  border-radius: 30px;
+}
+
 
 .sec1 .btns .btn-container,
 .sec1 .btns .operation-container {
@@ -297,11 +326,97 @@ html {
   box-shadow: 0px 4px 0px var(--Grayish-orange);
 }
 
-@media screen and (max-width: 600px) {
-  .sec1 {
-    flex-direction: column;
+@media screen and (max-width: 1060px){
+
+  .container{
+    display: none;
   }
+
+  .calculator{
+  width: 80%;
+  height: 70%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .background{
+      height: 150vh;
+  }
+
+  .sec1{
+      flex-direction: column;
+      justify-content: space-between;
+      width: auto;
+      width: 80%;
+      height: 60%;
+  }
+
+  .sec1 .numbers{
+      width: 100%;
+      height: 55%;
+  }
+
+  .sec1 .box{
+    height: 30%;
+    width: 100%;
 }
+
+.sec1 .btns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+  .sec1 .btns .btn-container{
+    width: 100%;
+    height: 100%;
+  }
+
+.sec1 .btns .btn{
+  height: 80%;
+}
+
+  .sec1 .btns .operation-container{
+    width: 100%;
+    height: 50%;
+  }
+
+  .sec1 .C, .sec1 .igual{
+    height: 100%;
+  }
+
+
+
+
+
+
+
+  
+  .sec1 .history{
+      width: 100%;
+      height: 40%;
+  }
+
+  .sec2 {
+      margin: 0;
+      width: 80%;
+      height: 25%;
+      margin: 2vh 0;
+  }
+
+  .sec2_text{
+      width: 100%;
+      height: 20%;
+      margin: 0;
+  }
+  
+}
+
+
 
 @keyframes slidein-calculator {
     from {
