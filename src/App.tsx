@@ -137,7 +137,7 @@ const App = () => {
           </Button>
         </ButtonContainer>
         <section>
-          <h2>History</h2>
+          <h2>History Modificado</h2>
         </section>
       </Container>
     </>
