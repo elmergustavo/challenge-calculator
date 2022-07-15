@@ -110,7 +110,7 @@ h2{
 }
 
 .background h1 {
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--general);
   color: white;
 }
 
@@ -169,7 +169,7 @@ h2{
   font-weight: 700;
   border-radius: 7px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 25vmin;
   margin: 0.3vmin;
@@ -279,6 +279,13 @@ h2{
 
 .history h5 {
   color: #ff8952;
+}
+
+.history-span {
+  margin: 5px;
+  color: var(--Very-dark-grayish-blue);
+  font-size: large;
+  font-family: var(--general);
 }
 
 .history h1 {
