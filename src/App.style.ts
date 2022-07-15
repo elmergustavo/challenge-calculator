@@ -12,11 +12,14 @@ type Theme = {
 };
 
 export const Container = styled.div`
+  display:flex;
+`;
+
+export const CalcContainer = styled.div`
   max-width: 500px;
   min-width: 300px;
   margin: 0 auto;
   user-select: none;
-
   @media screen and (min-width: 450px) {
    min-width: 340px 
   }
@@ -128,3 +131,21 @@ export const Switcher = styled.div<Theme>`
   transition: all 0.1s linear;
 
 `;
+
+export const Histories = styled.div`
+  width:25vw;
+  margin-left: 1.3em;
+  padding: 15px 10px;
+  background-color: var(--toggle-background);
+  min-height: 290px;
+  border-radius: 0.5rem;
+  display:flex;
+  flex-direction:column;
+  color: var(--key-background-orange);
+`
+
+export const History = styled.div`
+  color: var(--white-text);
+  text-align: end;
+  margin-bottom: 1em;
+`
